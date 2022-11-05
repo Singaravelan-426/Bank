@@ -1,5 +1,7 @@
 package com.example.Bank.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +25,10 @@ public String getAddBank(@RequestBody Bank b) {
 @GetMapping(value="findifsc/{s1}/{s2}")
 public String getIfsc(@PathVariable String s1,@PathVariable String s2) {
     return bankSer.getIfsc(s1,s2);
+}
+@GetMapping(value="/getall")
+public List<Bank> getall() {
+	return bankSer.getall();
 }
 
 }

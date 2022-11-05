@@ -1,5 +1,7 @@
 package com.example.Bank.Dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -15,5 +17,9 @@ public class BankDao {
 	}
 	public String getIfsc(String s1,String s2) {
 	    return bankRepo.getIfscCode(s1, s2);
+	}
+	public List<Bank> getall() {
+		
+		return bankRepo.findAll();
 	}
 }

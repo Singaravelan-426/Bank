@@ -1,5 +1,7 @@
 package com.example.Bank.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,5 +22,10 @@ public class BankService {
 
 	public String getIfsc(String s1,String s2) {
 	    return bankDao.getIfsc(s1,s2);
+	}
+
+	public List<Bank> getall() {
+		
+		return bankDao.getall();
 	}
 }
